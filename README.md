@@ -1,6 +1,6 @@
 # PTMS
-PSM Title Management System
-Create .env file    
-composer update     
-php artisan migrate     
-php artisan db:seed      
+PSM Title Management System     
+1. Create .env file    
+2. composer update     
+3. php artisan migrate     
+4. php artisan db:seed      
