@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('course');
             $table->string('psm title');
+            $table->string('psm category');
             $table->string('supervisor name');
             $table->timestamps();
         });

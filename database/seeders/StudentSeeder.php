@@ -22,6 +22,7 @@ class StudentSeeder extends Seeder
             'email'=> 'foongkh@live.com',
             'course'=> 'BCS',
             'psm title'=>'Null',
+            'psm category'=>'Null',
             'supervisor name'=>'Null',
         ],[
             'matric number' => 'CB19049',
@@ -29,6 +30,7 @@ class StudentSeeder extends Seeder
             'email'=> 'chewminwei@gmail.com',
             'course'=> 'BCS',
             'psm title'=>'Null',
+            'psm category'=>'Null',
             'supervisor name'=>'Null',
         ]]);
     }
