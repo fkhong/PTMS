@@ -17,4 +17,12 @@ class titleManageController extends Controller
         return view('TitleManage.titleManageHome');
         }
     }
+
+    public function openAssignSupervisor() {
+        return view('TitleManage.assignSupervisor');
+    }
+
+    public function openViewStudentSupervisor() {
+        return view('TitleManage.viewStudentSupervisor');
+    }
 }

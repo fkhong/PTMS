@@ -34,4 +34,8 @@ Route::middleware([
 Route::resource('/Supervisor',supervisorController::Class);
 Route::resource('/Student',studentController::Class);
 Route::resource('/TitleBook',titleBookController::Class);
+
+//Title Management Routes
+Route::get('/openAssignSupervisor', [titleManageController::class, 'openAssignSupervisor']);
+Route::get('/openViewStudentSupervisor', [titleManageController::class, 'openViewStudentSupervisor']);
 Route::resource('/TitleManage',titleManageController::Class);
