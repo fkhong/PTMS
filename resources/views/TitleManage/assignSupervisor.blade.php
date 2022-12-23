@@ -9,6 +9,7 @@
 
 @section('content')
 <div style="padding-top:30px;padding-bottom:30px;text-align:center">
+<h2 style="font-size:20px;"><b> List Of Students </b></h2><br><br>
 <table class="table table-hover">
     <thead>
         <tr>

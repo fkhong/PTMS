@@ -25,6 +25,14 @@ class titleManageController extends Controller
     }
 
     public function openViewStudentSupervisor() {
-        return view('TitleManage.viewStudentSupervisor');
+        $Lecturers=Lecturers::all() ;
+        return view('TitleManage.viewStudentSupervisor')-> with ('lecturers',$Lecturers);
+    }
+
+    public function searchExpertise() {
+        $searchText=$_GET['query'];
+        $lecturers = Lecturers::where('expertise','LIKE','%'.$searchText.'%')->get();
+
+        return view ('TitleManage.viewStudentSupervisor',compact('lecturers'));
     }
 }
