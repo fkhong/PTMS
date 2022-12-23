@@ -17,21 +17,21 @@ class StudentSeeder extends Seeder
     public function run()
     {
         DB::table('students')-> insert ([[
-            'matric number' => 'CB19053',
+            'matricNumber' => 'CB19053',
             'name'=> 'Foong Kin Hong',
             'email'=> 'foongkh@live.com',
             'course'=> 'BCS',
-            'psm title'=>'Null',
-            'psm category'=>'Null',
-            'supervisor name'=>'Null',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
         ],[
-            'matric number' => 'CB19049',
+            'matricNumber' => 'CB19049',
             'name'=> 'Chew Min Wei',
             'email'=> 'chewminwei@gmail.com',
             'course'=> 'BCS',
-            'psm title'=>'Null',
-            'psm category'=>'Null',
-            'supervisor name'=>'Null',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
         ]]);
     }
 }

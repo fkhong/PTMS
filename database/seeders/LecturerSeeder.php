@@ -17,19 +17,19 @@ class LecturerSeeder extends Seeder
     public function run()
     {
         DB::table('lecturers')-> insert ([[
-            'staffid' => 'L001',
+            'staffId' => 'L001',
             'name'=> 'Dr. Foong',
             'email'=> 'drfoong@gmail.com',
             'contact'=> '01124162415',
             'expertise'=>'Machine Learning',
-            'student supervised'=>'Null',
+            'studentSupervised'=>'Null',
         ],[
-            'staffid' => 'L002',
+            'staffId' => 'L002',
             'name'=> 'Dr. Lim',
             'email'=> 'drlim@gmail.com',
             'contact'=> '0123456789',
             'expertise'=>'Artificial Intelligence',
-            'student supervised'=>'Null',
+            'studentSupervised'=>'Null',
         ]]);
     }
 }

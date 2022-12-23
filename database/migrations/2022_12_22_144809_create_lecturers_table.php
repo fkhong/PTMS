@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
-            $table->string('staffid');
+            $table->string('staffId');
             $table->string('name');
             $table->string('email');
             $table->string('contact');
             $table->string('expertise');
-            $table->string('student supervised');
+            $table->string('studentSupervised');
             $table->timestamps();
         });
     }
