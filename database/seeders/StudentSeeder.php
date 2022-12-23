@@ -21,17 +21,17 @@ class StudentSeeder extends Seeder
             'name'=> 'Foong Kin Hong',
             'email'=> 'foongkh@live.com',
             'course'=> 'BCS',
-            'psmTitle'=>'Null',
-            'psmCategory'=>'Null',
-            'supervisorName'=>'Null',
+            'psmTitle'=>null,
+            'psmCategory'=>null,
+            'supervisorName'=>null,
         ],[
             'matricNumber' => 'CB19049',
             'name'=> 'Chew Min Wei',
             'email'=> 'chewminwei@gmail.com',
             'course'=> 'BCS',
-            'psmTitle'=>'Null',
-            'psmCategory'=>'Null',
-            'supervisorName'=>'Null',
+            'psmTitle'=>null,
+            'psmCategory'=>null,
+            'supervisorName'=>null,
         ]]);
     }
 }
