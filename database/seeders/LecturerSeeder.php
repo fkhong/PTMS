@@ -22,14 +22,14 @@ class LecturerSeeder extends Seeder
             'email'=> 'drfoong@gmail.com',
             'contact'=> '01124162415',
             'expertise'=>'Machine Learning',
-            'studentSupervised'=>null,
+            'studentSupervised'=>'Null',
         ],[
             'staffId' => 'L002',
             'name'=> 'Dr. Lim',
             'email'=> 'drlim@gmail.com',
             'contact'=> '0123456789',
             'expertise'=>'Artificial Intelligence',
-            'studentSupervised'=>null,
+            'studentSupervised'=>'Null',
         ]]);
     }
 }

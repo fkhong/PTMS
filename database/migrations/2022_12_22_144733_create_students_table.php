@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('course');
-            $table->string('psmTitle')->nullable();
-            $table->string('psmCategory')->nullable();
-            $table->string('supervisorName')->nullable();
+            $table->string('psmTitle');
+            $table->string('psmCategory');
+            $table->string('supervisorName');
             $table->timestamps();
         });
     }
