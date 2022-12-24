@@ -30,19 +30,19 @@ class titleBookController extends Controller
 
         $TitleBook = Students::find($id);
 
-        $input = Request::all() ;
+        $input = Request::all();
 
         $TitleExist = Students::where('psmtitle', '=', request()->get('psmTitle'))->exists();
 
         if ($TitleExist ==true) {
-            return redirect('TitleBook')-> with ('error', 'Title Exist!');
+            $TitleBook -> update (array('psmCategory' => request()->get('psmCategory')));
+            return redirect('TitleBook')-> with ('error', 'Title Exist! Only PSM Category are Updated!');
+
         }else {
-            $TitleBook -> update ($input);
-            Students::where('matricNumber', '=', request()->get('matricNumber'))
-                ->update(array('psmTitle' => request()->get('psmTitle'), 'psmCategory' => request()->get('psmCategory')));       
-            return redirect('TitleBook') -> with ('success','Title Added!');
+            $TitleBook -> update (array('psmTitle' => request()->get('psmTitle'), 'psmCategory' => request()->get('psmCategory')));
+            return redirect('TitleBook') -> with ('success','Title Added!'); 
         }
-  
+    
     }
 
 }

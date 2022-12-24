@@ -8,8 +8,22 @@
 @endsection
 
 @section('content')
-<div class='container'>
-    <h1 class="fw-bold"> Title Booking List</h1>
+
+@if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
+
+@if ($message = Session::get('error'))
+<div class="alert alert-danger alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
+<div class="container">
+    <h1 class="fw-bold" style="text-align: center" > Title Booking List</h1>
 </div>
 
 <div class="table-responsive">
