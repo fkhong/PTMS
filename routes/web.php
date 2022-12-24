@@ -31,7 +31,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
+//Supervisor Management Routes
+Route::get('/openAddSupervisor', [supervisorController::class, 'openAddSupervisor']);
+Route::get('/openViewSupervisor', [supervisorController::class, 'openViewSupervisor']);
 Route::resource('/Supervisor',supervisorController::Class);
+
 Route::resource('/Student',studentController::Class);
 Route::resource('/TitleBook',titleBookController::Class);
 
