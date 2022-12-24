@@ -13,7 +13,7 @@
 
 <div style="padding-top:30px;padding-bottom:30px;text-align:center">
     <p><b> Assign Supervisor According to Different Category </b></p> <br><br>
-    <a href="/openAssignSupervisor"><button type="button" class="btn btn-outline-success">Assign Supervisor</button></a> &nbsp
-    <a href="/openViewStudentSupervisor"><button type="button" class="btn btn-outline-primary">View Student Supervisor</button></a>
+    <a href="/openAssignSupervisor"><button type="button" class="btn btn-outline-success">Assign Student Supervisor</button></a> &nbsp
+    <a href="/openViewStudentSupervisor"><button type="button" class="btn btn-outline-primary">View Supervisor List</button></a>
 </div>
 @endsection

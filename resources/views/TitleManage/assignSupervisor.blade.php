@@ -14,7 +14,8 @@
 @endif
 
 <div style="padding-top:30px;padding-bottom:30px;text-align:center">
-<h2 style="font-size:20px;"><b> List Of Students </b></h2><br><br>
+<h2 style="font-size:20px;"><b> List Of Students </b></h2><br>
+<a style ="float:right;"href="/openViewStudentSupervisor"><button type="button" class="btn btn-outline-success">View Supervisor Details</button></a><br><br><br>
 <table class="table table-hover">
     <thead>
         <tr>
