@@ -122,10 +122,10 @@ class LecturerSeeder extends Seeder
             'email'=> 'Test',
             'contact'=> 'Test',
             'expertise'=>'Test',
-            'studentSupervised1'=>'Test',
-            'studentSupervised2'=>'Test',
-            'studentSupervised3'=>'Test',
-            'studentSupervised4'=>'Test',
+            'studentSupervised1',
+            'studentSupervised2',
+            'studentSupervised3',
+            'studentSupervised4',
         ]]);
     }
 }
