@@ -45,7 +45,11 @@
             <td>{{ $item->name }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->expertise }}</td>
-            <td>{{ $item->studentSupervised }}</td>
+            <td>{{ $item->studentSupervised1 }},
+            {{ $item->studentSupervised2 }},<br>
+            {{ $item->studentSupervised3 }},
+            {{ $item->studentSupervised4 }}
+            </td>
       
         </tr>
     @endforeach

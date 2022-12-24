@@ -8,6 +8,11 @@
 @endsection
 
 @section('content')
+
+@if(!empty($successMsg))
+  <div class="alert alert-warning"> {{ $successMsg }}</div>
+@endif
+
 <div style="padding-top:30px;padding-bottom:30px;text-align:center">
 <h2 style="font-size:20px;"><b> List Of Students </b></h2><br><br>
 <table class="table table-hover">
@@ -31,7 +36,7 @@
             <td>{{ $item->psmTitle }}</td>
             <td>{{ $item->psmCategory }}</td>
             <td>{{ $item->supervisorName }}</td>
-            <td>Test</td>
+            <td><button onclick="window.location='{{route('TitleManage.show',['TitleManage'=>$item->id])}}'"class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Assign</button></td>
       
         </tr>
     @endforeach

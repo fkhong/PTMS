@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('contact');
             $table->string('expertise');
-            $table->string('studentSupervised');
+            $table->string('studentSupervised1');
+            $table->string('studentSupervised2');
+            $table->string('studentSupervised3');
+            $table->string('studentSupervised4');
             $table->timestamps();
         });
     }
