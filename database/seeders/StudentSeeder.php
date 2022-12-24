@@ -32,6 +32,46 @@ class StudentSeeder extends Seeder
             'psmTitle'=>'Null',
             'psmCategory'=>'Null',
             'supervisorName'=>'Null',
+        ],[
+            'matricNumber' => 'CB19055',
+            'name'=> 'Teo Voon Chuan',
+            'email'=> 'teovoonchuan@gmail.com',
+            'course'=> 'BCS',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
+        ],[
+            'matricNumber' => 'CB19091',
+            'name'=> 'Loh Kin Ming',
+            'email'=> 'lohkinming@gmail.com',
+            'course'=> 'BCS',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
+        ],[
+            'matricNumber' => 'CB19037',
+            'name'=> 'Lim Kah Chun',
+            'email'=> 'limkahchun@gmail.com',
+            'course'=> 'BCS',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
+        ],[
+            'matricNumber' => 'CB19039',
+            'name'=> 'Loh Hin Ye',
+            'email'=> 'lohhinye@gmail.com',
+            'course'=> 'BCS',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
+        ],[
+            'matricNumber' => 'CB19082',
+            'name'=> 'Koh Qing Zhe',
+            'email'=> 'kohqingzhe@gmail.com',
+            'course'=> 'BCS',
+            'psmTitle'=>'Null',
+            'psmCategory'=>'Null',
+            'supervisorName'=>'Null',
         ]]);
     }
 }

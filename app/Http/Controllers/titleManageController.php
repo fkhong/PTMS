@@ -48,13 +48,14 @@ class titleManageController extends Controller
                             ->orWhere('studentSupervised4', 'Null')->get()->sortBy('name');
             return view('TitleManage.assignForm',compact('students','lecturers'));
         }else {
-            return view('TitleManage.assignSupervisor')-> with ('students',$Students)->with('successMsg','This student has already been assigned to a supervisor.');;
+            return view('TitleManage.assignSupervisor')-> with ('students',$Students)->with('successMsg','This student has already been assigned to a supervisor.');
             
         }
         
     }
 
     public function update(Request $request,$id) {
+        
         $students = Students::find($id);
         $input = $request->input ('supervisorName');
         $students -> update (['supervisorName'=>$input]);
@@ -73,7 +74,7 @@ class titleManageController extends Controller
         }else if ($supervised4 == "Null") {
             $lecturers -> update(['studentSupervised4'=>$studentsMatric]);
         }
-        
-        return view('TitleManage.titleManageHome');
+        $Students=Students::all() ;
+        return view('TitleManage.assignSupervisor')-> with ('students',$Students)->with('successMsg','Assigned Successfully!');
     }
 }
