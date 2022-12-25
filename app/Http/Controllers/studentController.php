@@ -22,7 +22,7 @@ class studentController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->all();
+        $input = Request::all();
         Students::create($input);
         return redirect('openViewStudent')->with('success',"New Student's Data Added!");
     }

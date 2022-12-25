@@ -7,7 +7,13 @@
 
 @endsection
 
+
+
 @section('content')
+@if(!empty($successMsg))
+  <div class="alert alert-warning"> {{ $successMsg }}</div>
+@endif
+
 <div style="padding-top:30px;padding-bottom:30px;text-align:center">
 
        <h2 style="font-size:20px;"><b> List Of Lecturers/Supervisors </b></h2>
@@ -20,7 +26,7 @@
                     <td style="column-width: 650px;"> </td>
                     <td><form class="d-flex" type="get" action="{{ url('/searchExpertise') }}" >
                     <input class="form-control me-2" name ="query" type="search" placeholder="E.g. Machine Learning" aria-label="Search">
-                    <button style="width:230px;" class="btn btn-outline-success" type="submit">Search Expertise</button>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     </td>
                 </tr>
@@ -45,10 +51,12 @@
             <td>{{ $item->name }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->expertise }}</td>
-            <td>{{ $item->studentSupervised1 }},
-            {{ $item->studentSupervised2 }},<br>
-            {{ $item->studentSupervised3 }},
-            {{ $item->studentSupervised4 }}
+            <td>
+            <a href ="/openStudentProfile/{{ $item->studentSupervised1 }}">{{ $item->studentSupervised1 }}</a>,
+            <a href="/openStudentProfile/{{ $item->studentSupervised2 }}">{{ $item->studentSupervised2 }}</a>,   
+            <br>
+            <a href="/openStudentProfile/{{ $item->studentSupervised3 }}">{{ $item->studentSupervised3 }}</a>,
+            <a href="/openStudentProfile/{{ $item->studentSupervised4 }}">{{ $item->studentSupervised4 }}</a>
             </td>
       
         </tr>

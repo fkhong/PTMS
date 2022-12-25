@@ -47,4 +47,5 @@ Route::resource('/TitleBook',titleBookController::Class);
 Route::get('/openAssignSupervisor', [titleManageController::class, 'openAssignSupervisor']);
 Route::get('/openViewStudentSupervisor', [titleManageController::class, 'openViewStudentSupervisor']);
 Route::get('/searchExpertise', [titleManageController::class, 'searchExpertise']);
+Route::get('/openStudentProfile/{studentSupervised1}',[titleManageController::class, 'openStudentProfile']);
 Route::resource('/TitleManage',titleManageController::Class);

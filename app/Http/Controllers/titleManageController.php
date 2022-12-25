@@ -30,9 +30,27 @@ class titleManageController extends Controller
         return view('TitleManage.viewStudentSupervisor')-> with ('lecturers',$Lecturers);
     }
 
+    public function openStudentProfile($studentSupervised) {
+        $Lecturers=Lecturers::all() ;
+        if ($studentSupervised != "Null") {
+            $students = Students::select('*')->where('matricNumber','=',$studentSupervised)->first();
+            return view ('TitleManage.viewStudentDetails',compact('students'));
+        }else {
+            
+            return view('TitleManage.viewStudentSupervisor')-> with ('lecturers',$Lecturers)
+            ->with('successMsg','Please assign a student first before proceed to view student profile.');   
+        }
+        
+    }
+
     public function searchExpertise() {
         $searchText=$_GET['query'];
-        $lecturers = Lecturers::where('expertise','LIKE','%'.$searchText.'%')->get();
+        $lecturers = Lecturers::where('expertise','LIKE','%'.$searchText.'%')
+                    ->orWhere ('name','LIKE','%'.$searchText.'%') 
+                    ->orWhere ('studentSupervised1','LIKE','%'.$searchText.'%')
+                    ->orWhere ('studentSupervised2','LIKE','%'.$searchText.'%')
+                    ->orWhere ('studentSupervised3','LIKE','%'.$searchText.'%')
+                    ->orWhere ('studentSupervised4','LIKE','%'.$searchText.'%')->get();
 
         return view ('TitleManage.viewStudentSupervisor',compact('lecturers'));
     }

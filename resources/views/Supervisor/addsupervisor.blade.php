@@ -21,7 +21,7 @@
                 <label> Name </label> <br>
                 <input type="text" name = "name" id="name" class="form-control"></input><br>
                 <label> Email </label> <br>
-                <input type="text" name = "email" id="email" class="form-control"></input><br>
+                <input type="email" name = "email" id="email" class="form-control"></input><br>
                 <label> Contact </label> <br>
                 <input type="text" name = "contact" id="contact" class="form-control"></input><br>
                 <label> Expertise </label> <br>

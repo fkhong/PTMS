@@ -24,7 +24,7 @@
                     <label> Student Name </label> <br>
                     <input type="text" name = "name" id="name" class="form-control"></input><br>
                     <label> Email </label> <br>
-                    <input type="text" name = "email" id="email" class="form-control"></input><br>
+                    <input type="email" name = "email" id="email" class="form-control"></input><br>
                     <label for="course">Course</label>
                     <select name="course" id="course" class="form-control">
                     <option value="BCS">BCS</option>
