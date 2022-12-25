@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('course');
-            $table->string('psmTitle');
-            $table->string('psmCategory');
-            $table->string('supervisorName');
+            $table->string('psmTitle')-> default("Null");
+            $table->string('psmCategory')-> default("Null");
+            $table->string('supervisorName')-> default("Null");
             $table->timestamps();
         });
     }

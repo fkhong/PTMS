@@ -36,7 +36,11 @@ Route::get('/openAddSupervisor', [supervisorController::class, 'openAddSuperviso
 Route::get('/openViewSupervisor', [supervisorController::class, 'openViewSupervisor']);
 Route::resource('/Supervisor',supervisorController::Class);
 
+//Student Management Routes
 Route::resource('/Student',studentController::Class);
+Route::get('/openAddStudent', [studentController::class, 'openAddStudent']);
+Route::get('/openViewStudent', [studentController::class, 'openViewStudent']);
+
 Route::resource('/TitleBook',titleBookController::Class);
 
 //Title Management Routes
