@@ -10,9 +10,11 @@ use Session;
 
 class titleManageController extends Controller
 {
+    // index for displaying home page of title manage module
     public function index()
     {
         $role = Auth::user()->role;
+        // check if the role is admin
         if ($role == '0') {
             return view('errorAccessStudent');
         }else {
@@ -20,21 +22,26 @@ class titleManageController extends Controller
         }
     }
 
+    // open the view listing all the students with their PSM Title
     public function openAssignSupervisor() {
         $Students=Students::all() ;
         return view('TitleManage.assignSupervisor')-> with ('students',$Students);
     }
 
+    // open the view listing all supervisors details
     public function openViewStudentSupervisor() {
         $Lecturers=Lecturers::all() ;
         return view('TitleManage.viewStudentSupervisor')-> with ('lecturers',$Lecturers);
     }
 
-    public function openStudentProfile($studentSupervised) {
+    // open student profile showing singular student details 
+    public function openStudentProfile($studentSupervised,$lectId) {
         $Lecturers=Lecturers::all() ;
+        // check if the student supervised is exist
         if ($studentSupervised != "Null") {
             $students = Students::select('*')->where('matricNumber','=',$studentSupervised)->first();
-            return view ('TitleManage.viewStudentDetails',compact('students'));
+            $lecturer = Lecturers::find($lectId);
+            return view ('TitleManage.viewStudentDetails',compact('students','lecturer'));
         }else {
             
             return view('TitleManage.viewStudentSupervisor')-> with ('lecturers',$Lecturers)
@@ -43,8 +50,10 @@ class titleManageController extends Controller
         
     }
 
+    // search the table for user input from the search bar 
     public function searchExpertise() {
         $searchText=$_GET['query'];
+        // search the column of expertise,name and studentSupervised in 'Lecturers' table
         $lecturers = Lecturers::where('expertise','LIKE','%'.$searchText.'%')
                     ->orWhere ('name','LIKE','%'.$searchText.'%') 
                     ->orWhere ('studentSupervised1','LIKE','%'.$searchText.'%')
@@ -55,10 +64,12 @@ class titleManageController extends Controller
         return view ('TitleManage.viewStudentSupervisor',compact('lecturers'));
     }
 
+    // open assigning form to assign supervisor to that student
     public function show($id) {
         $Students=Students::all() ;
         $students = Students::find($id);
         $studentsSupervisor = Students::where('id','=',$id)->value('supervisorName');
+        // check whether the quota of student supervised is full
         if ($studentsSupervisor == "Null"){
             $lecturers = Lecturers::where('studentSupervised1','Null')
                             ->orWhere('studentSupervised2', 'Null')
@@ -72,6 +83,8 @@ class titleManageController extends Controller
         
     }
 
+    // update by adding supervisor name to students table
+    // update by adding matric number to lecturers table 
     public function update(Request $request,$id) {
         
         $students = Students::find($id);
@@ -83,6 +96,7 @@ class titleManageController extends Controller
         $supervised2 = Lecturers::where('name','=',$input)->value('studentSupervised2');
         $supervised3 = Lecturers::where('name','=',$input)->value('studentSupervised3');
         $supervised4 = Lecturers::where('name','=',$input)->value('studentSupervised4');
+        // check and fill in the available supervised slot with student matric number (Maximum of 4 students)
         if ($supervised1 == "Null"){
             $lecturers -> update(['studentSupervised1'=>$studentsMatric]);
         }else if ($supervised2 == "Null") {

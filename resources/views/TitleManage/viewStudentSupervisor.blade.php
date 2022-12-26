@@ -52,11 +52,11 @@
             <td>{{ $item->email }}</td>
             <td>{{ $item->expertise }}</td>
             <td>
-            <a href ="/openStudentProfile/{{ $item->studentSupervised1 }}">{{ $item->studentSupervised1 }}</a>,
-            <a href="/openStudentProfile/{{ $item->studentSupervised2 }}">{{ $item->studentSupervised2 }}</a>,   
+            <a href ="/openStudentProfile/{{ $item->studentSupervised1 }},{{ $item->id }}">{{ $item->studentSupervised1 }}</a>,
+            <a href="/openStudentProfile/{{ $item->studentSupervised2 }},{{ $item->id }}">{{ $item->studentSupervised2 }}</a>,   
             <br>
-            <a href="/openStudentProfile/{{ $item->studentSupervised3 }}">{{ $item->studentSupervised3 }}</a>,
-            <a href="/openStudentProfile/{{ $item->studentSupervised4 }}">{{ $item->studentSupervised4 }}</a>
+            <a href="/openStudentProfile/{{ $item->studentSupervised3 }},{{ $item->id }}">{{ $item->studentSupervised3 }}</a>,
+            <a href="/openStudentProfile/{{ $item->studentSupervised4 }},{{ $item->id }}">{{ $item->studentSupervised4 }}</a>
             </td>
       
         </tr>

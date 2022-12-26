@@ -41,11 +41,12 @@ Route::resource('/Student',studentController::Class);
 Route::get('/openAddStudent', [studentController::class, 'openAddStudent']);
 Route::get('/openViewStudent', [studentController::class, 'openViewStudent']);
 
+//Title Book Routes
 Route::resource('/TitleBook',titleBookController::Class);
 
 //Title Management Routes
 Route::get('/openAssignSupervisor', [titleManageController::class, 'openAssignSupervisor']);
 Route::get('/openViewStudentSupervisor', [titleManageController::class, 'openViewStudentSupervisor']);
 Route::get('/searchExpertise', [titleManageController::class, 'searchExpertise']);
-Route::get('/openStudentProfile/{studentSupervised1}',[titleManageController::class, 'openStudentProfile']);
+Route::get('/openStudentProfile/{studentSupervised1},{id}',[titleManageController::class, 'openStudentProfile']);
 Route::resource('/TitleManage',titleManageController::Class);
