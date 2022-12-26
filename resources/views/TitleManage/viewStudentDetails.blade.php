@@ -43,7 +43,7 @@
                     <tr> 
                         <td style="width:210px;">
                             <label> Supervisor Name: </label> <br>
-                            <p style="font-size:18px;"><i>{{ $students->supervisorName }} {{ $lecturer->name }} </i></p><br> 
+                            <p style="font-size:18px;"><i>{{ $students->supervisorName }}</i></p><br> 
                         </td>
                         <td style="width:210px;"> 
                             <label> Supervisor Expertise: </label> <br>
