@@ -27,6 +27,7 @@
                 <label> Expertise </label> <br>
                 <input type="text" name = "expertise" id="expertise" class="form-control"></input><br>
                 <input type="submit" value ="Save" class="btn btn-outline-success"></input>
+                <button type="button"class="btn btn-outline-success" style="margin:8px;"onclick="window.location='{{ route('Supervisor.index') }}'">Back To Home</button>
             </form>
         </div>
     </div>

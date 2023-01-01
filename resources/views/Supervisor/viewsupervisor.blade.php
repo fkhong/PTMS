@@ -38,7 +38,7 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button class="btn btn-outline-success" type="submit">Delete</button>
+                                            <button class="btn btn-outline-danger" type="submit">Delete</button>
 
                                         </form>
                                     </div>
@@ -56,5 +56,6 @@
 
 
                 </table>
+                <button type="button"class="btn btn-outline-success" style="margin:8px;"onclick="window.location='{{ route('Supervisor.index') }}'">Back To Home</button>
 
 @endsection
