@@ -26,6 +26,7 @@
             <th>PSM Category</th>
             <th>Supervisor Name</th>
             <th>Assign</th>
+            <th> Unassign</th>
         </tr>
     </thead>
     <tbody>
@@ -38,7 +39,7 @@
             <td>{{ $item->psmCategory }}</td>
             <td>{{ $item->supervisorName }}</td>
             <td><button onclick="window.location='{{route('TitleManage.show',['TitleManage'=>$item->id])}}'"class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Assign</button></td>
-      
+            <td> <a href="/unassignSupervisor/{{ $item->matricNumber }}/{{ $item->supervisorName }}" class="btn btn-danger btn-sm"><button type="button">Undo</button></a></td>
         </tr>
     @endforeach
     </tbody>

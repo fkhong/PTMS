@@ -109,4 +109,31 @@ class titleManageController extends Controller
         $Students=Students::all() ;
         return view('TitleManage.assignSupervisor')-> with ('students',$Students)->with('successMsg','Assigned Successfully!');
     }
+
+
+    public function unassignSupervisor($matricNumber,$supervisorName) {
+
+        Students::where('matricNumber',$matricNumber)
+        -> update (['supervisorName'=>"Null"]);
+
+        $lecturers = Lecturers::where('name',$supervisorName);
+        $supervised1 = Lecturers::where('name','=',$supervisorName)->value('studentSupervised1');
+        $supervised2 = Lecturers::where('name','=',$supervisorName)->value('studentSupervised2');
+        $supervised3 = Lecturers::where('name','=',$supervisorName)->value('studentSupervised3');
+        $supervised4 = Lecturers::where('name','=',$supervisorName)->value('studentSupervised4');
+
+        if ($supervised1 == $matricNumber){
+            $lecturers -> update(['studentSupervised1'=>"Null"]);
+        }else if ($supervised2 == $matricNumber) {
+            $lecturers -> update(['studentSupervised2'=>"Null"]);
+        }else if ($supervised3 == $matricNumber) {
+            $lecturers -> update(['studentSupervised3'=>"Null"]);
+        }else if ($supervised4 == $matricNumber) {
+            $lecturers -> update(['studentSupervised4'=>"Null"]);
+        }
+        
+        
+        $Students=Students::all() ;
+        return view('TitleManage.assignSupervisor')-> with ('students',$Students)->with('successMsg','Un-Assigned Successfully!');
+    }
 }

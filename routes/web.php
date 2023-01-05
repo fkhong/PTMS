@@ -50,3 +50,4 @@ Route::get('/openViewStudentSupervisor', [titleManageController::class, 'openVie
 Route::get('/searchExpertise', [titleManageController::class, 'searchExpertise']);
 Route::get('/openStudentProfile/{studentSupervised1},{id}',[titleManageController::class, 'openStudentProfile']);
 Route::resource('/TitleManage',titleManageController::Class);
+Route::get('/unassignSupervisor/{matricNumber}/{supervisorName}','\App\Http\Controllers\titleManageController@unassignSupervisor');
